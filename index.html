@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern To-Do App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📝 My Tasks</h1>
+      <button id="theme-toggle" class="theme-toggle" title="Toggle dark mode">🌙</button>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="Add a new task..."
+        autocomplete="off"
+        maxlength="120"
+        required
+      />
+      <button type="submit" class="add-btn">＋</button>
+    </form>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <p class="task-counter">
+      <span id="remaining-count">0</span> task(s) remaining
+    </p>
+
+    <ul id="task-list" class="task-list"></ul>
+
+    <footer class="actions">
+      <button id="clear-completed" class="clear-btn">🧹 Clear completed</button>
+    </footer>
+  </div>
+
+  <template id="task-template">
+    <li class="task-item">
+      <label class="task-content">
+        <input type="checkbox" class="task-checkbox" />
+        <span class="task-text"></span>
+      </label>
+      <button class="delete-btn" title="Delete task">🗑️</button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
